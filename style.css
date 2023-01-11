@@ -1,4 +1,5 @@
 :root {
+  --background: #fff;
   --primary-color: #2196f3;
   --primary-text-color: #212121;
   --section-bg-color: #2f303a;
@@ -15,6 +16,7 @@
   --section-2-bg-color: #fff;
   --portfolio-card-border: #eeeeee;
   --header-border: #ececec;
+  --footer-adress: rgba(255, 255, 255, 0.6);
 }
 
 h1 {
@@ -31,9 +33,9 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
-  width: 1600px;
   color: var(--primary-text-color);
   margin: 0 auto;
+  background-color: var(--background);
 }
 
 .container {
@@ -60,7 +62,7 @@ body {
   border-bottom: 1px solid var(--header-border);
 }
 
-.header-style > nav > ul > li > a:hover {
+.header-style > .container > nav > ul > li > a:hover {
   color: var(--primary-color);
 }
 
@@ -79,8 +81,8 @@ body {
   text-decoration: none;
 }
 
-.logo:hover {
-  color: var(--primary-color);
+.logo > a:visited {
+  color: inherit;
 }
 
 .logo-black {
@@ -95,6 +97,10 @@ body {
   text-decoration: none;
 }
 
+.row > li > a:visited {
+  color: inherit;
+}
+
 .header-nav {
   margin-right: 371px;
 }
@@ -103,9 +109,20 @@ body {
   margin-right: 50px;
 }
 
-.mail:hover {
+.header-mail:hover {
   color: var(--primary-color);
 }
+
+/* .header-mail > a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  background-image: url("./images/icons.svg#icon-envelope");
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
 
 .phone-number:hover {
   color: var(--primary-color);
@@ -117,15 +134,19 @@ body {
   justify-content: center;
   flex-direction: column;
   padding: 94px;
-  width: 1600px;
+  width: 100%;
   background: var(--section-bg-color);
+}
+
+.padding-zero {
+  padding: 0;
 }
 
 .section-2-bg {
   background-color: var(--section-2-bg-color);
 }
 
-.section > h1 {
+.container > h1 {
   font-weight: 900;
   width: 696px;
   font-size: 44px;
@@ -138,7 +159,7 @@ body {
   color: var(--section-color);
 }
 
-.section > button {
+.section-1-button {
   width: 200px;
   margin-top: 30px;
   background: var(--primary-color);
@@ -157,8 +178,13 @@ body {
   color: var(--studio-button-text-color);
 }
 
-.section-1-padding {
+.section-1-bg {
   padding: 200px;
+  background-image: linear-gradient(to right, #2f303a66, #2f303a66),
+    url(images/section-1-background.jpg);
+  height: 600px;
+
+  object-fit: contain;
 }
 
 .card-set {
@@ -246,7 +272,6 @@ body {
 }
 
 .portfolio-cards-wrap {
-  flex-basis: calc((100% - 60px) / 3);
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -287,7 +312,6 @@ body {
 
 .footer-style {
   background: var(--footer-background);
-  width: 1600px;
   padding-bottom: 60px;
 }
 
@@ -319,6 +343,7 @@ body {
   letter-spacing: 0.03em;
 
   color: var(--footer-adress-color);
+  font-style: normal;
 }
 
 .footer-adress:hover {
@@ -326,14 +351,15 @@ body {
 }
 
 .footer-mail {
+  font-style: normal;
   margin-top: 9px;
   font-size: 14px;
   line-height: 1.71;
   /* or 171% */
 
   letter-spacing: 0.03em;
-
-  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  color: var(--footer-adress);
 }
 
 .footer-mail:hover {
@@ -341,11 +367,12 @@ body {
 }
 
 .footer-telephone {
+  font-style: normal;
   margin-top: 9px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--footer-adress);
 }
 .footer-telephone:hover {
   color: var(--primary-color);
@@ -371,6 +398,7 @@ body {
 }
 
 .portfolio-buttons > li > button {
+  height: 38px;
   font-weight: 500;
   cursor: pointer;
   padding: 6px 22px;

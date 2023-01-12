@@ -102,27 +102,28 @@ body {
 }
 
 .header-nav {
-  margin-right: 371px;
+  margin-right: 345px;
 }
 
 .header-mail {
   margin-right: 50px;
 }
 
-.header-mail:hover {
-  color: var(--primary-color);
+.header-mail > a > svg {
+  margin-right: 10px;
 }
 
-/* .header-mail > a::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-color: red;
-  background-image: url("./images/icons.svg#icon-envelope");
-  background-repeat: no-repeat;
-  background-position: center center;
-} */
+.header-mail > a {
+  align-items: center;
+  display: flex;
+  --color2: var(--our-team-member-position-text-color);
+  color: var(--our-team-member-position-text-color);
+}
+
+.header-mail a:hover {
+  color: var(--primary-color);
+  --color2: var(--primary-color);
+}
 
 .phone-number:hover {
   color: var(--primary-color);
